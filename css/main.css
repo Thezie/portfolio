@@ -1,0 +1,357 @@
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --pink: #f57dff;
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --navy-shadow: rgb(15 23 42/1);
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --main-transition: 0.2s;
+}
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #495670;
+  border-radius: 20px;
+  border: transparent;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  color: var(--slate);
+  position: relative;
+  background-color: var(--navy);
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+p {
+  line-height: 2;
+  font-size: 20px;
+}
+.container {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 910px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.cursor {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    600px at 1030px 1543.67px,
+    rgba(29, 78, 216, 0.15),
+    transparent 80%
+  );
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+header {
+  height: 100vh;
+  flex-basis: 30%;
+  padding-top: 250px;
+  position: sticky;
+  top: 0;
+}
+header .nav li {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+header .nav .indicator {
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background-color: var(--dark-slate);
+  margin: 0 15px 3px 0;
+  transition: var(--main-transition);
+}
+header .nav .active {
+  width: 80px;
+  background-color: var(--pink);
+  cursor: pointer;
+}
+header .nav li a {
+  color: var(--dark-slate);
+}
+header .nav .active-link {
+  color: var(--pink);
+}
+main {
+  flex-basis: 70%;
+  padding-top: 120px;
+}
+.overflow {
+  overflow: hidden;
+}
+.show-right,
+.show-top,
+.reveal {
+  transition: 1s ease-in-out;
+}
+.show-right {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.animate .show-right {
+  transform: translateX(0);
+  opacity: 1;
+}
+.reveal {
+  opacity: 0;
+}
+.animate .reveal {
+  opacity: 1;
+}
+@media (max-width: 991px) {
+  header {
+    display: none;
+  }
+  main {
+    flex-basis: 100%;
+    padding-top: 80px;
+  }
+}
+main #about {
+  padding-bottom: 50px;
+}
+main #about h1 {
+  font-size: clamp(40px, 8vw, 80px);
+  margin: 0 0 15px;
+  color: var(--lightest-slate);
+}
+main #about h2 {
+  font-size: clamp(35px, 6vw, 60px);
+  color: var(--light-slate);
+  transition-delay: 0.6s;
+}
+#description {
+  transition-delay: 0.8s;
+}
+main #about .sticky {
+  transition-delay: 1.5s;
+}
+main #about p {
+  transition-delay: 1.5s;
+}
+main p {
+  margin-top: 30px;
+}
+.sticky,
+#description {
+  display: none;
+}
+@media (max-width: 991px) {
+  .sticky {
+    display: block;
+    color: var(--pink);
+    text-transform: uppercase;
+    padding: 20px 0;
+    letter-spacing: 1.5px;
+  }
+  #description {
+    display: block;
+    font-size: 20px;
+    margin: 15px 0 100px;
+    color: var(--slate);
+  }
+}
+.show-top {
+  transform: translateY(150px);
+  opacity: 0;
+}
+.animate .show-top {
+  transform: translateY(0);
+  opacity: 1;
+}
+main #skills .content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+@media (max-width: 991px) {
+  main #skills .content {
+    flex-direction: column;
+  }
+}
+main #skills .dev,
+main #skills .tools {
+  flex-basis: 50%;
+}
+main #skills p {
+  transition-delay: 0.2s;
+}
+main #skills .title {
+  font-size: 24px;
+  text-transform: uppercase;
+  color: var(--lightest-slate);
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  transition-delay: 0.4s;
+}
+main #skills i {
+  margin-right: 30px;
+  vertical-align: middle;
+}
+main #skills .dev ul i {
+  font-size: 30px;
+  color: var(--pink);
+}
+main #skills ul {
+  margin-left: 30px;
+  border-radius: 10px;
+  padding: 30px 20px 0;
+  height: 200px;
+  transition-delay: 0.6s;
+}
+main #skills ul:hover {
+  background-color: rgb(17 34 64 / 50%);
+  box-shadow: 0 0 40px rgb(15 23 42/1);
+}
+main #skills ul li {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  main p {
+    font-size: 18px;
+  }
+  main #skills .title {
+    font-size: 18px;
+  }
+  main #skills ul li {
+    font-size: 16px;
+  }
+  main #skills .tools ul i {
+    font-size: 15px;
+    color: var(--pink);
+  }
+  main #skills i {
+    margin-right: 20px;
+  }
+}
+main #skills .tools ul i {
+  font-size: 15px;
+  color: var(--pink);
+}
+/* start project  */
+main #projects {
+  padding: 50px 0;
+}
+@media (max-width: 991px) {
+  main #about,
+  main #skills,
+  main #projects {
+    padding: 0 0 60px;
+  }
+}
+main #projects p {
+  transition-delay: 0.2s;
+}
+main #projects .first,
+main #projects .second {
+  padding: 30px 0;
+}
+main #projects .second .show-right,
+main #projects .second .show-top {
+  transition-delay: 2s;
+}
+main #projects h4 {
+  font-size: 22px;
+  margin-bottom: 30px;
+  color: var(--lightest-slate);
+  padding-left: 15px;
+  transition-delay: 0.4s;
+}
+main #projects .screenshots {
+  position: relative;
+  width: 95%;
+}
+main #projects .screenshots::after {
+  display: block;
+  padding-top: 45.5%;
+  content: "";
+}
+main #projects .screenshots img {
+  border-radius: 5px;
+  transition-delay: calc(0.6s * var(--i));
+}
+main #projects .screenshots img:nth-child(1) {
+  position: absolute;
+  width: 85%;
+  z-index: 1;
+  left: 0;
+  --i: 1;
+}
+main #projects .screenshots img:nth-child(2) {
+  position: absolute;
+  width: 22%;
+  z-index: 2;
+  right: 0;
+  bottom: 8%;
+  --i: 2;
+}
+main #projects .icons {
+  text-align: right;
+  margin-right: 55px;
+  transition-delay: 0.8s;
+}
+main #projects .icons a {
+  color: var(--light-slate);
+  font-size: 20px;
+}
+main #projects .icons a:hover {
+  color: var(--pink);
+}
+main #projects .icons a:nth-child(1) {
+  margin-right: 15px;
+}
+@media (max-width: 767px) {
+  main #projects h4 {
+    font-size: 20px;
+  }
+  main #projects .icons a {
+    font-size: 18px;
+  }
+}
+footer {
+  margin-bottom: 30px;
+  text-align: center;
+}
