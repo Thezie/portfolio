@@ -83,6 +83,11 @@ p {
   mix-blend-mode: screen;
   pointer-events: none;
 }
+@media (max-width:767px) {
+  .cursor {
+    display: none;
+  }
+}
 header {
   height: 100vh;
   flex-basis: 30%;
