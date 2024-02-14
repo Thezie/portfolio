@@ -27,7 +27,11 @@ window.addEventListener("load", revealElements);
 // ========= HANDLER FUNCTIONS =========
 function activeLink() {
   sections.forEach((sec) => {
+<<<<<<< HEAD
     if (window.scrollY >= sec.offsetTop - sec.clientHeight / 5) {
+=======
+    if (window.scrollY >= sec.offsetTop - sec.clientHeight / 4) {
+>>>>>>> ff46f6159e39b6f4cbeae2b8fabcc6fc78634760
       navLinks.forEach((link) => {
         if (link.href.includes(sec.id)) {
           if (link.classList.contains("active-link")) return;
