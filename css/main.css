@@ -85,7 +85,7 @@ p {
 }
 header {
   height: 100vh;
-  flex-basis: 30%;
+  flex-basis: 45%;
   padding-top: 250px;
   position: sticky;
   top: 0;
@@ -93,6 +93,14 @@ header {
 header .nav li {
   text-transform: uppercase;
   margin-bottom: 20px;
+}
+header .nav li:hover span {
+  width: 80px;
+  background-color: var(--pink);
+  cursor: pointer;
+}
+header .nav li:hover a {
+  color: var(--pink);
 }
 header .nav .indicator {
   display: inline-block;
@@ -126,11 +134,9 @@ main {
   transition: 1s ease-in-out;
 }
 .show-right {
-  transform: translateX(-100%);
   opacity: 0;
 }
 .animate .show-right {
-  transform: translateX(0);
   opacity: 1;
 }
 .reveal {
@@ -209,6 +215,9 @@ main #skills .content {
   main #skills .content {
     flex-direction: column;
   }
+  main #skills .dev {
+    margin-bottom: 25px;
+  }
 }
 main #skills .dev,
 main #skills .tools {
@@ -238,7 +247,6 @@ main #skills ul {
   margin-left: 30px;
   border-radius: 10px;
   padding: 30px 20px 0;
-  height: 200px;
   transition-delay: 0.6s;
 }
 main #skills ul:hover {
@@ -285,8 +293,7 @@ main #projects {
 main #projects p {
   transition-delay: 0.2s;
 }
-main #projects .first,
-main #projects .second {
+main #projects .project {
   padding: 30px 0;
 }
 main #projects .second .show-right,
@@ -297,7 +304,6 @@ main #projects h4 {
   font-size: 22px;
   margin-bottom: 30px;
   color: var(--lightest-slate);
-  padding-left: 15px;
   transition-delay: 0.4s;
 }
 main #projects .screenshots {
@@ -315,34 +321,51 @@ main #projects .screenshots img {
 }
 main #projects .screenshots img:nth-child(1) {
   position: absolute;
-  width: 85%;
+  width: 65%;
   z-index: 1;
   left: 0;
   --i: 1;
 }
 main #projects .screenshots img:nth-child(2) {
   position: absolute;
-  width: 22%;
+  width: 16%;
   z-index: 2;
-  right: 0;
-  bottom: 8%;
+  right: 17%;
+  bottom: 29%;
   --i: 2;
 }
+main #projects .technologies,
 main #projects .icons {
-  text-align: right;
-  margin-right: 55px;
+  position: absolute;
+}
+main #projects .technologies {
+  bottom: 17%;
+}
+main #projects .technologies span {
+  padding: 0 12px;
+  margin-right: 5px;
+  color: var(--pink);
+  background-color: rgb(245 125 255 / 20%);
+  border-radius: 9999px;
+  font-size: 12px;
+}
+main #projects .icons {
+  right: 10%;
+  bottom: 24%;
   transition-delay: 0.8s;
 }
 main #projects .icons a {
   color: var(--light-slate);
   font-size: 20px;
+  display: block;
+  margin-bottom: 15px;
 }
 main #projects .icons a:hover {
   color: var(--pink);
 }
-main #projects .icons a:nth-child(1) {
+/* main #projects .icons a:nth-child(1) {
   margin-right: 15px;
-}
+} */
 @media (max-width: 767px) {
   main #projects h4 {
     font-size: 20px;
